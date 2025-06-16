@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Personal website of Chandra Prakash Bathula, Machine Learning Engineer and Adjunct Faculty at Saint Louis University, showcasing expertise in AI, NLP, and education." />
+    <meta name="keywords"
+        content="Chandra Prakash Bathula, Machine Learning, AI, NLP, Saint Louis University, Adjunct Faculty, Data Science" />
+    <title>Sandhya Rani Katike</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: #1e94af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1e94af;
+  text-decoration: none;
+}
+
+/* Navbar */
+nav {
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 200;
+  padding: 15px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background: #1e94af;
+  color: white;
+}
+
+/* Layout container */
+.container {
+  display: flex;
+  padding-top: 70px; /* ensure content starts below the fixed nav */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 80px;
+  width: 350px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+  padding: 30px 20px;
+  height: fit-content;
+  margin-right: 40px;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.sidebar h1 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #111827;
+}
+
+.sidebar p {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.social-icons {
+  margin-top: 25px;
+}
+
+.social-icons a {
+  font-size: 26px;
+  margin: 0 10px;
+  color: #6b7280;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1e94af;
+  transform: translateY(-4px);
+}
+
+/* Content */
+.content {
+  margin-top:10px;
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 50px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  color: #111827;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h2 {
+  border-bottom: 3px solid #1e94af;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+h3 {
+  margin-bottom: 12px;
+  color: #1e94af;
+}
+
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Sections spacing */
+section {
+  margin-bottom: 60px;
+}
+
+/* Project links */
+.content a i.fas.fa-link,
+.content a i.fab.fa-github {
+  margin-right: 6px;
+}
+
+/* === Responsive Breakpoints === */
+
+/* 1. Tablet & small-desktop (≤ 900px) */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding-top: 70px; /* keep same top padding so content isn't under nav */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+    padding: 50px 20px 20px 20px;
+  }
+
+  /* Make profile pic slightly larger on tablets */
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .content {
+    padding: 30px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* 2. Phone & very-small screens (≤ 600px) */
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 30px 10px 10px 10px;
+  }
+
+  /* Make profile pic even larger on phones */
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content {
+    padding: 20px 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Professional Experiences</a></li>
+            <li><a href="#research">Research Interests</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications-service">Publications & Service</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="Profile.jpeg" alt="Chandra Prakash Bathula" class="profile-pic" />
+            <h1>Chandra Prakash Bathula</h1>
+            <p>Machine Learning Engineer | Adjunct Faculty @ SLU</p>
+            <div class="social-icons">
+                <a href="mailto:chandraprakash.bathula@slu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://portfolio-chandra-prakash-bathulas-projects.vercel.app/" title="CV"><i
+                        class="fas fa-file-alt"></i></a>
+                <a href="https://github.com/ChandraPrakash-Bathula" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/chandra-prakash-bathula/" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://medium.com/@ChandraPrakash-Bathula" title="Medium"><i class="fab fa-medium"></i></a>
+                <a href="https://scholar.google.com/citations?user=PuvoWIwAAAAJ" title="Google Scholar"><i
+                        class="fas fa-graduation-cap"></i></a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I’m a Machine Learning Practitioner and Faculty at Saint Louis University, passionate about
+                    applying AI for real-world impact. My focus spans natural language processing, computer vision,
+                    predictive analytics, and full-stack ML systems. I’ve built scalable solutions processing thousands
+                    of data points and mentored 250+ graduate students in hands-on software solutions. Whether
+                    predicting crop yields or optimizing learning outcomes, my work is rooted in bridging theory with
+                    practical innovation.
+                </p>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <ul>
+                    <li><strong>MS Information Systems</strong>, Saint Louis University, GPA: 3.93/4.00 (Aug 2022 – May
+                        2024)
+                        <ul>
+                            <li><strong>MRP-Thesis:</strong> Developed a mobile app for farmers, enabling market access,
+                                equipment rentals, and community collaboration with real-time weather and logistics
+                                support.</li>
+                            <li>Awarded Distinction and Distinguished Graduate of Saint Louis University. </li>
+                            <li><strong>Relevant Courses:</strong> Information Retrieval, Software Engineering, Enterprise
+                                Architecture.</li>
+                        </ul>
+                    </li>
+                    <li><strong>B.Tech in Electronics & Computer Engineering</strong>, JBIET (July 2017 – June 2021)
+                        <ul>
+                            <li><strong>Capstone:</strong> “Smart Home Automation using IoT” — reduced energy usage by
+                                20% with sensor-driven systems.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                <ul>
+                    <li><strong>Adjunct Faculty</strong>, Saint Louis University (Aug 2024 – Present)
+                        <ul>
+                            <li>Mentor 70+ graduate students per semester in web development, design, data structures,
+                                and deployment, fostering practical skills through project-based learning.</li>
+                            <li>Designed and delivered a new course module on scalable software architectures,
+                                increasing student project completion rates by 25%.</li>
+                            <li>Introduced real-world case studies on AI applications, enhancing student understanding
+                                of theoretical concepts by 30% as per feedback surveys.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ITS Researcher</strong>, Saint Louis University (Mar 2023 – Dec 2024)
+                        <ul>
+                            <li>Optimized workflows for 3D print station and Lost & Found UI, reducing ticket workload
+                                by 30% through streamlined ticketing systems.</li>
+                            <li>Developed a QR code-based asset tracking system, cutting manual labor hours by 35% and
+                                improving retrieval efficiency.</li>
+                            <li>Led a cross-functional team to automate high-priority email notifications, saving 15
+                                hours of staff time weekly and improving response times by 40%.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Associate Software Engineer</strong>, Qentelli Solutions Pvt Ltd, Hyderabad, India (Mar
+                        2021 – Jul 2022)
+                        <ul>
+                            <li>Developed responsive web applications using React, Vue, Node.js, and Electron,
+                                integrating ML models to process over 10,000 data points daily.</li>
+                            <li>Designed and implemented an automated testing suite with Jest, reducing bug incidence by
+                                20% and accelerating release cycles by 15%.</li>
+                            <li>Collaborated with product teams to enhance UI/UX features, boosting user engagement
+                                metrics by 18% through A/B testing and iterative design.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section id="research">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li><strong>Natural Language Processing (NLP):</strong> Focused on building interpretable and
+                        domain-specific NLP systems, including transformers for education, healthcare, and chat-based
+                        applications.</li>
+                    <li><strong>Interpretability & Explainability:</strong> Exploring SHAP, LIME, and counterfactual
+                        explanations to build transparent AI models, especially in sensitive domains like healthcare and
+                        finance.</li>
+                    <li><strong>Computer Vision:</strong> Applying CNNs and transformer-based architectures for
+                        real-world tasks such as object detection, scene understanding, and agricultural monitoring.
+                    </li>
+                    <li><strong>AI in Agriculture:</strong> Leveraging ML and CV techniques for crop health detection,
+                        yield prediction, and smart irrigation systems.</li>
+                    <li><strong>AI in Education:</strong> Designing adaptive learning systems, automated feedback
+                        generation, and performance analytics to enhance personalized education.</li>
+                </ul>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div>
+                    <h3>EliteNotes App: Transcription & Summarization Tool</h3>
+                    <ul>
+                        <li>Built a full-stack app for real-time transcription and summarization.</li>
+                        <li>Integrated TensorFlow models for speech-to-text and text summarization.</li>
+                        <li>Reduced note-taking time by 40% for over 500 users.</li>
+                        <li><strong>Tech Stack:</strong> React, Flask, TensorFlow, Vercel <a
+                                href="https://elite-notes-poc.vercel.app/"><i class="fas fa-globe"></i> Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>TubeFlix: Lightweight YouTube Clone</h3>
+                    <ul>
+                        <li>Created a video streaming app with optimized playback performance.</li>
+                        <li>Used React for the frontend and Firebase for backend and hosting.</li>
+                        <li>Designed a lightweight alternative to YouTube’s core features.</li>
+                        <li><strong>Tech Stack:</strong> React, Firebase <a href="https://utubeflix-79845.web.app/"><i
+                                    class="fas fa-globe"></i> Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>3D Visualization of Word2Vec Embeddings</h3>
+                    <ul>
+                        <li>Built an interactive 3D tool to visualize Word2Vec embeddings.</li>
+                        <li>Applied PCA and Plotly for dimensionality reduction and rendering.</li>
+                        <li>Enabled semantic exploration with color-coded similarity markers.</li>
+                        <li><strong>Tech Stack:</strong> Python, Gensim, Scikit-learn, Plotly, NumPy <a
+                                href="https://github.com/ChandraPrakash-Bathula/PCA-in-3D.git"><i
+                                    class="fab fa-github"></i> GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>VIZ FLIX GPT: AI-Powered Movie Browsing & Recommendation Platform</h3>
+                    <ul>
+                        <li>Developed an AI-driven movie app with personalized recommendations.</li>
+                        <li>Implemented secure authentication and dynamic trailer browsing.</li>
+                        <li>Integrated GPT for multi-lingual search functionality.</li>
+                        <li><strong>Tech Stack:</strong> React, Firebase, Redux, Tailwind CSS, TMDB API, OpenAI API <a
+                                href="https://viz-flix-gpt.vercel.app/"><i class="fas fa-globe"></i> Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Apparel Recommendation System: Content-Based Filtering & CNN</h3>
+                    <ul>
+                        <li>Created a recommendation engine for personalized apparel suggestions.</li>
+                        <li>Processed 180,000+ images using content-based filtering and CNNs.</li>
+                        <li>Combined TF-IDF, Word2Vec, and VGG-16 for optimal performance.</li>
+                        <li><strong>Tech Stack:</strong> Python, Keras, NLTK, Amazon API, CNN (VGG-16) <a
+                                href="https://github.com/ChandraPrakash-Bathula/Apparel-Recommendations"><i
+                                    class="fab fa-github"></i> GitHub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tableau Dashboards</h3>
+                    <ul>
+                        <li>Designed dashboards for public data insights.</li>
+                        <li>Visualized complex datasets with interactive elements.</li>
+                        <li>Shared publicly for community use and feedback.</li>
+                        <li><strong>Tech Stack:</strong> Tableau <a
+                                href="https://public.tableau.com/app/profile/chandra.prakash.bathula/vizzes"><i
+                                    class="fas fa-chart-bar"></i> View Dashboards</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section id="publications-service">
+                <h2>Publications & Service</h2>
+
+                <div class="paper">
+                    <h3>Published Paper</h3>
+                    <p><strong>Title:</strong> Developing a Enterprise Application Tool to Discover Midwest Job Trends
+                    </p>
+                    <p><strong>Authors:</strong> Chandra Bathula (Saint Louis University), Maria Weber (Saint Louis
+                        University)</p>
+                    <p><strong>Presented at:</strong> CCSC - Central Plains 2025, Drake University, Iowa</p>
+                    <p class="abstract-short">Significant growth in Computer and Mathematical Occupations is
+                        projected...</p>
+                    <p class="abstract-full" style="display: none;">Significant growth in Computer and Mathematical
+                        Occupations is projected
+                        over the next decade, outpacing other fields with higher median pay and demand for specialized
+                        skills. According to the Bureau of Labor Statistics (BLS), from 2023 to 2033, the U.S.
+                        anticipates an 11% growth in Computer Occupations and 7% in Mathematical Occupations, generating
+                        over 393,000 jobs annually [5][6][3]. This study analyzes national trends in these fields,
+                        focusing on wages, growth rates, and regional dynamics in the Central Plains (Iowa, Kansas,
+                        Missouri, Nebraska). Nationally, median salaries range from $101,000 to $104,000, with regional
+                        variations reflecting local economic factors [5][3]. Missouri leads regional growth, driven by
+                        demand for Data Scientists and Software Developers, while Kansas excels in Actuaries, and Iowa
+                        and Nebraska show steady increases in Information Security Analysts. This research highlights
+                        the importance of targeted skill development to meet evolving technological needs, using
+                        descriptive statistics and visualizations to inform educators, students, and policymakers.</p>
+                    <button class="toggle-abstract" aria-expanded="false">Read more</button>
+                </div>
+                <!-- <div>
+                    <h3>Published Paper</h3>
+                    <p><strong>Title:</strong> Developing a Enterprise Application Tool to Discover Midwest Job Trends
+                    </p>
+                    <p><strong>Authors:</strong> Chandra Bathula (Saint Louis University), Maria Weber (Saint Louis
+                        University)</p>
+                    <p><strong>Presented at:</strong> CCSC - Central Plains 2025, Drake University, Iowa</p>
+                    <p class="abstract-short">Significant growth in Computer and Mathematical Occupations is projected
+                        over the next decade, outpacing other fields with higher median pay and demand for specialized
+                        skills.</p>
+                    <p class="abstract-full">Significant growth in Computer and Mathematical Occupations is projected
+                        over the next decade, outpacing other fields with higher median pay and demand for specialized
+                        skills. According to the Bureau of Labor Statistics (BLS), from 2023 to 2033, the U.S.
+                        anticipates an 11% growth in Computer Occupations and 7% in Mathematical Occupations, generating
+                        over 393,000 jobs annually [5][6][3]. This study analyzes national trends in these fields,
+                        focusing on wages, growth rates, and regional dynamics in the Central Plains (Iowa, Kansas,
+                        Missouri, Nebraska). Nationally, median salaries range from $101,000 to $104,000, with regional
+                        variations reflecting local economic factors [5][3]. Missouri leads regional growth, driven by
+                        demand for Data Scientists and Software Developers, while Kansas excels in Actuaries, and Iowa
+                        and Nebraska show steady increases in Information Security Analysts. This research highlights
+                        the importance of targeted skill development to meet evolving technological needs, using
+                        descriptive statistics and visualizations to inform educators, students, and policymakers.</p>
+                    <button class="toggle-abstract" aria-expanded="false">Read more</button>
+                </div> -->
+                <div>
+                    <h3>Professional Service</h3>
+                    <!-- Replace [Date] with the actual date of the conference -->
+                    <p><strong>Event:</strong> CCSC Central Plains Conference, Drake University, Iowa</p>
+                    <p><strong>Judge:</strong> CCSC poster presentations for undergraduate students.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.querySelectorAll('.toggle-abstract').forEach(button => {
+            button.addEventListener('click', function () {
+                const paper = this.closest('.paper');
+                const short = paper.querySelector('.abstract-short');
+                const full = paper.querySelector('.abstract-full');
+                if (full.style.display === 'none' || full.style.display === '') {
+                    short.style.display = 'none';
+                    full.style.display = 'block';
+                    this.textContent = 'Read less';
+                    this.setAttribute('aria-expanded', 'true');
+                } else {
+                    short.style.display = 'block';
+                    full.style.display = 'none';
+                    this.textContent = 'Read more';
+                    this.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
